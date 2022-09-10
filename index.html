@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,12 +10,15 @@
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="img/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="img/faviconApple.png" type="image/png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <link rel="stylesheet" href="styles/index.css">
 </head>
+
 <body>
   <header class="header">
-    <div class="container">
+    <div class="container header__container">
       <img src="img/logo.svg" alt="Логотип ProApple" class="header__logo">
 
       <nav class="header__navigation navigation">
@@ -23,7 +27,7 @@
             <a href="#goods" class="navigation__link">Продукты</a>
           </li>
           <li class="navigation__item">
-            <a href="features" class="navigation__link">Характеристики</a>
+            <a href="#features" class="navigation__link">Характеристики</a>
           </li>
         </ul>
       </nav>
@@ -83,12 +87,12 @@
 
         <h2 class="goods__title">Все продукты новой линейки</h2>
 
-        <div class="goods__block">
-          <ul class="goods__list">
-            <li class="goods__item">
+        <div class="goods__block swiper">
+          <ul class="goods__list swiper-wrapper">
+            <li class="goods__item swiper-slide">
               <article class="goods__product product">
                 <div class="product__image-wrapper">
-                  <img src="img/iPhone14-pro.png" alt="iPhone 14 PRO" class="product__image">
+                  <img src="img/iPhone14-pro.png" alt="iPhone 14 PRO" class="product__image" width="200" height="200">
                 </div>
 
                 <div class="product__info">
@@ -100,10 +104,10 @@
               </article>
             </li>
 
-            <li class="goods__item">
+            <li class="goods__item swiper-slide">
               <article class="goods__product product">
                 <div class="product__image-wrapper">
-                  <img src="img/iPhone14.png" alt="iPhone 14" class="product__image">
+                  <img src="img/iPhone14.png" alt="iPhone 14" class="product__image" width="200" height="200">
                 </div>
 
                 <div class="product__info">
@@ -115,10 +119,10 @@
               </article>
             </li>
 
-            <li class="goods__item">
+            <li class="goods__item swiper-slide">
               <article class="goods__product product">
                 <div class="product__image-wrapper">
-                  <img src="img/AirPodsPro.png" alt="AirPods Pro" class="product__image">
+                  <img src="img/AirPodsPro.png" alt="AirPods Pro" class="product__image" width="200" height="200">
                 </div>
 
                 <div class="product__info">
@@ -138,7 +142,7 @@
       </div>
     </section>
 
-    <section class="features" if="features">
+    <section class="features" id="features">
       <div class="container">
         <p class="features__tagline">Мы становимся лучше. Для вас</p>
 
@@ -170,6 +174,51 @@
     </section>
   </main>
 
-  <footer class="footer"></footer>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <img src="img/logo-w.svg" alt="Логотип ProApple">
+
+        <nav class="footer__navigation navigation">
+          <ul class="navigation__list">
+            <li class="navigation__item">
+              <a href="#goods" class="navigation__link">Продукты</a>
+            </li>
+            <li class="navigation__item">
+              <a href="#features" class="navigation__link">Характеристики</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <p class="footer__copyright">Copyright © 2022 ProApple</p>
+    </div>
+  </footer>
+
+
+  <script>
+    new Swiper('.goods__block', {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      centerInsufficientSlides: true,
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 2,
+          spaceBetween: 24
+        },
+        1200: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+        }
+      }
+    })
+  </script>
 </body>
+
 </html>
