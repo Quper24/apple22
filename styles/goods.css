@@ -85,6 +85,10 @@
 }
 
 @media (min-width: 1024px) {
+  .goods {
+    padding: 70px 0;
+  }
+
   .goods__arrow_prev {
     left: 18px;
   }
