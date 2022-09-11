@@ -39,3 +39,57 @@
   right: -5px;
   transform: rotate(180deg);
 }
+
+@media (min-width: 768px) {
+  .goods__block {
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  .goods__arrow {
+    position: absolute;
+    z-index: 5;
+    top: calc(340px / 2);
+  }
+
+  .goods__arrow_prev {
+    left: 10px;
+  }
+
+  .goods__arrow_next {
+    right: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .goods__block {
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  .goods__arrow {
+
+    width: 90px;
+    height: 90px;
+    top: calc(340px / 2);
+    background-image: url("../img/arrow-slider-90.svg");
+  }
+
+  .goods__arrow_prev {
+    left: 1px;
+  }
+
+  .goods__arrow_next {
+    right: 1px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .goods__arrow_prev {
+    left: 18px;
+  }
+
+  .goods__arrow_next {
+    right: 18px;
+  }
+}

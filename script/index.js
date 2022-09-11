@@ -14,7 +14,7 @@ new Swiper('.goods__block', {
       slidesPerView: 2,
       spaceBetween: 24,
     },
-    1200: {
+    1440: {
       slidesPerView: 3,
       spaceBetween: 24,
     },
