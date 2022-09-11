@@ -22,22 +22,17 @@
   font-size: 14px;
 }
 
+@media (min-width: 560px) {
+  .footer__content {
+    margin-bottom: 45px;
+  }
 
-@media (min-width: 768px) {
   .footer__navigation {
     flex-basis: auto;
   }
 }
 
 @media (min-width: 1024px) {
-  .footer {
-    padding-top: 30px;
-  }
-
-  .footer__navigation {
-    font-size: 20px;
-  }
-  
   .footer__copyright {
     font-size: 16px;
   }

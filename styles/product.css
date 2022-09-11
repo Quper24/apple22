@@ -24,7 +24,6 @@
   font-size: 16px;
 }
 
-
 .product__more {
   position: relative;
   font-size: 14px;
@@ -57,6 +56,11 @@
   .product__image {
     width: 235px;
   }
+
+  .product__image-wrapper {
+    margin-bottom: 20px;
+  }
+
 }
 
 @media (min-width: 1024px) {
@@ -70,5 +74,25 @@
 
   .product__image {
     width: 255px;
+  }
+
+  .product__image-wrapper {
+    margin-bottom: 24px;
+  }
+  
+  .product__info {
+    margin-bottom: 24px;
+  }
+  
+  .product__title {
+    font-size: 24px;
+  }
+  
+  .product__price {
+    font-size: 24px;
+  }
+
+  .product__more {
+    font-size: 16px;
   }
 }
