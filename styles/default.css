@@ -1,7 +1,5 @@
 html {
   box-sizing: border-box;
-  position: relative;
-  overflow-x: hidden;  
 }
 
 *,
@@ -11,8 +9,6 @@ html {
 }
 
 body {
-  position: relative;
-  overflow-x: hidden;  
   min-width: 320px;
   font-family: 'SF UI Display', sans-serif;
   font-size: 16px;
@@ -48,13 +44,20 @@ h1, h2, h3, p {
 }
 
 .container {
-  max-width: 1238px;
+  max-width: 1324px;
   margin: 0 auto;
   padding: 0 15px;
 }
 
 @media (min-width: 768px) {
-  .container {
+  .container { 
     padding: 0 34px;
   }
 }
+
+@media (min-width: 1024px) {
+  .container { 
+    padding: 0 77px;
+  }
+}
+

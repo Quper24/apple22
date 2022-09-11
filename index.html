@@ -10,9 +10,7 @@
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="img/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="img/faviconApple.png" type="image/png">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <link rel="stylesheet" href="styles/index.css">
 </head>
 
@@ -87,57 +85,59 @@
 
         <h2 class="goods__title">Все продукты новой линейки</h2>
 
-        <div class="goods__block swiper">
-          <ul class="goods__list swiper-wrapper">
-            <li class="goods__item swiper-slide">
-              <article class="goods__product product">
-                <div class="product__image-wrapper">
-                  <img src="img/iPhone14-pro.png" alt="iPhone 14 PRO" class="product__image" width="200" height="200">
-                </div>
+        <div class="goods__helper">
+          <div class="goods__block">
+            <ul class="goods__list">
+              <li class="goods__item">
+                <article class="goods__product product">
+                  <div class="product__image-wrapper">
+                    <img src="img/iPhone14-pro.png" alt="iPhone 14 PRO" class="product__image" width="200" height="200">
+                  </div>
 
-                <div class="product__info">
-                  <h3 class="product__title">iPhone 14 PRO</h3>
-                  <p class="product__price">$1050</p>
-                </div>
+                  <div class="product__info">
+                    <h3 class="product__title">iPhone 14 PRO</h3>
+                    <p class="product__price">$1050</p>
+                  </div>
 
-                <button class="product__more">Узнать больше</button>
-              </article>
-            </li>
+                  <button class="product__more">Узнать больше</button>
+                </article>
+              </li>
 
-            <li class="goods__item swiper-slide">
-              <article class="goods__product product">
-                <div class="product__image-wrapper">
-                  <img src="img/iPhone14.png" alt="iPhone 14" class="product__image" width="200" height="200">
-                </div>
+              <li class="goods__item">
+                <article class="goods__product product">
+                  <div class="product__image-wrapper">
+                    <img src="img/iPhone14.png" alt="iPhone 14" class="product__image" width="200" height="200">
+                  </div>
 
-                <div class="product__info">
-                  <h3 class="product__title">iPhone 14</h3>
-                  <p class="product__price">$799</p>
-                </div>
+                  <div class="product__info">
+                    <h3 class="product__title">iPhone 14</h3>
+                    <p class="product__price">$799</p>
+                  </div>
 
-                <button class="product__more">Узнать больше</button>
-              </article>
-            </li>
+                  <button class="product__more">Узнать больше</button>
+                </article>
+              </li>
 
-            <li class="goods__item swiper-slide">
-              <article class="goods__product product">
-                <div class="product__image-wrapper">
-                  <img src="img/AirPodsPro.png" alt="AirPods Pro" class="product__image" width="200" height="200">
-                </div>
+              <li class="goods__item">
+                <article class="goods__product product">
+                  <div class="product__image-wrapper">
+                    <img src="img/AirPodsPro.png" alt="AirPods Pro" class="product__image" width="200" height="200">
+                  </div>
 
-                <div class="product__info">
-                  <h3 class="product__title">AirPods Pro</h3>
-                  <p class="product__price">$249</p>
-                </div>
+                  <div class="product__info">
+                    <h3 class="product__title">AirPods Pro</h3>
+                    <p class="product__price">$249</p>
+                  </div>
 
-                <button class="product__more">Узнать больше</button>
-              </article>
-            </li>
-          </ul>
+                  <button class="product__more">Узнать больше</button>
+                </article>
+              </li>
+            </ul>
 
-          <button class="goods__arrow goods__arrow_prev"></button>
+            <button class="goods__arrow goods__arrow_prev"></button>
 
-          <button class="goods__arrow goods__arrow_next"></button>
+            <button class="goods__arrow goods__arrow_next"></button>
+          </div>
         </div>
       </div>
     </section>
@@ -177,9 +177,9 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__content">
-        <img src="img/logo-w.svg" alt="Логотип ProApple">
+        <img src="img/logo-w.svg" alt="Логотип ProApple" class="footer__logo">
 
-        <nav class="footer__navigation navigation">
+        <div class="footer__navigation navigation">
           <ul class="navigation__list">
             <li class="navigation__item">
               <a href="#goods" class="navigation__link">Продукты</a>
@@ -188,41 +188,11 @@
               <a href="#features" class="navigation__link">Характеристики</a>
             </li>
           </ul>
-        </nav>
+        </div>
       </div>
-
       <p class="footer__copyright">Copyright © 2022 ProApple</p>
     </div>
   </footer>
-
-
-  <script>
-    new Swiper('.goods__block', {
-      slidesPerView: 1,
-      spaceBetween: 20,
-      centerInsufficientSlides: true,
-      breakpoints: {
-        320: {
-          slidesPerView: 1,
-        },
-        768: {
-          slidesPerView: 2,
-        },
-        1024: {
-          slidesPerView: 2,
-          spaceBetween: 24
-        },
-        1200: {
-          slidesPerView: 3,
-          spaceBetween: 24,
-        }
-      },
-      navigation: {
-        nextEl: '.goods__arrow_next',
-        prevEl: '.goods__arrow_prev',
-      },
-    })
-  </script>
 </body>
 
 </html>

@@ -1,6 +1,4 @@
 .country__btn {
-  background-color: transparent;
-  border: none;
   position: relative;
   padding-right: 13px;
 }
@@ -14,7 +12,7 @@
   transform: translateY(-50%);
   width: 9px;
   height: 6px;
-  background: url('../img/arrow-down.svg') center no-repeat;
+  background: url("../img/arrow-down.svg") no-repeat center;
 }
 
 .country__list {
