@@ -11,10 +11,10 @@
   <link rel="icon" href="img/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="img/faviconApple.png" type="image/png">
   <link rel="stylesheet" href="lib/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="lib/simplebar.css" />
+  <link rel="stylesheet" href="lib/simplebar.css">
   <link rel="stylesheet" href="styles/index.css">
 
-  <script src="lib/simplebar.min.js"></script>
+  <script src="lib/simplebar.min.js" defer></script>
   <script src="scripts/index.js" type="module"></script>
 </head>
 
@@ -38,7 +38,7 @@
         <button class="country__btn">Страна</button>
 
         <div class="country__wrapper">
-          <ul class="country__list ">
+          <ul class="country__list">
             <li class="country__item">
               <button class="country__choise" data-currency="USD">USA, USD</button>
             </li>
@@ -56,9 +56,6 @@
             </li>
             <li class="country__item">
               <button class="country__choise" data-currency="KZT">Kazakhstan, KZT</button>
-            </li>
-            <li class="country__item">
-              <button class="country__choise" data-currency="GBP">Great Britain, GBP</button>
             </li>
           </ul>
         </div>
@@ -253,7 +250,7 @@
           <input class="form__input" type="text">
         </label>
 
-        <button class="form__submit">Заказать консультацию</button>
+        <button class="form__submit" type="submit">Заказать консультацию</button>
       </form>
     </div>
   </div>

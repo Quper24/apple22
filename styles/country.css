@@ -20,17 +20,15 @@
 }
 
 .country__wrapper {
-  position: absolute;
-  right: 0;
-  top: 40px;
   display: none;
+  position: absolute;
+  top: 40px;
   width: 184px;
-  background-color: #fff;
+  right: 0;
+  background-color: #FFFFFF;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
-  padding: 16px 8px 16px;
-  font-weight: 300;
-  font-size: 14px;
+  padding: 16px 8px 16px 16px;
 }
 
 .country__wrapper_open {
@@ -38,7 +36,7 @@
 }
 
 .country__list {
-  max-height: 94px;
+  max-height: 102px;;
 }
 
 .country__item {
@@ -59,22 +57,22 @@
   position: absolute;
   right: 0;
   bottom: 0;
-  overflow: hidden;
   top: 0;
+  overflow: hidden;
   width: 4px;
 }
 
 .country__scrollbar {
-  background: #ECECEC;
+  background-color: #ECECEC;
   border-radius: 2px;
-  width: 4px;
 }
 
 @media (min-width: 1024px) {
+  .country__list {
+    max-height: 120px;
+  }
+
   .country__choise {
     font-size: 16px;
-  }
-  .country__list {
-    max-height: 102px;
   }
 }

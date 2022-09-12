@@ -1,8 +1,8 @@
 .modal {
   display: none;
   position: fixed;
-  z-index: 999;
   inset: 0;
+  z-index: 99;
   padding: 15px;
   overflow-y: auto;
 }
@@ -12,14 +12,16 @@
 }
 
 .modal__wrapper {
+  margin: auto;
   background-color: #fff;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  margin: auto;
   padding: 40px 15px;
 }
 
 .modal__title {
+  font-weight: 600;
+  font-size: 26px;
   text-align: center;
   margin-bottom: 40px;
 }
@@ -30,7 +32,6 @@
   }
 
   .modal__title {
-    font-weight: 600;
     font-size: 40px;
     margin-bottom: 48px;
   }

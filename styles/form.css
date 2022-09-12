@@ -17,10 +17,11 @@
   left: 8px;
   font-size: 14px;
   color: #9E9C9C;
+  transition: top .2s ease-in-out;
 }
 
 .form__placeholder_active {
-  top: -10px;
+  top: -8px;
 }
 
 .form__input {
@@ -28,17 +29,18 @@
   height: 46px;
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
-  border: none
+  border:none
 }
 
 .form__submit {
-  width: 225px;
-  background: #2238FF;
+  background-color: #2238FF;
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
   font-weight: 600;
-  height: 46px;
+  font-size: 16px;
   color: #FFFFFF;
+  height: 46px;
+  width: 225px;
 }
 
 @media (min-width: 1024px) {
@@ -46,4 +48,9 @@
     flex-direction: row;
     gap: 22px;
   }
+
+  .form__placeholder_active {
+    top: -10px;
+  }
+
 }
