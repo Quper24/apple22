@@ -42,7 +42,7 @@ new Swiper('.goods__block', {
 const productMore = document.querySelectorAll('.product__more');
 const modal = document.querySelector('.modal');
 
-productMore.forEach((btn) => {
+productMore.forEach(btn => {
   btn.addEventListener('click', () => {
     modal.classList.add('modal_open');
   });
@@ -84,7 +84,7 @@ const formatCurrency = (value, currency) => {
 const showPrice = (currency = 'USD') => {
   const priceElems = document.querySelectorAll('[data-price]');
 
-  priceElems.forEach((elem) => {
+  priceElems.forEach(elem => {
     elem.textContent = formatCurrency(
       elem.dataset.price * dataCurrency[currency],
       currency,
@@ -102,12 +102,12 @@ const requestOptions = {
 };
 
 fetch('https://api.apilayer.com/fixer/latest?base=USD', requestOptions)
-  .then((response) => response.json())
-  .then((result) => {
+  .then(response => response.json())
+  .then(result => {
     Object.assign(dataCurrency, result.rates);
     showPrice();
   })
-  .catch((error) => console.log('error', error));
+  .catch(error => console.log('error', error));
 
 // choices
 
@@ -125,50 +125,89 @@ countryWrapper.addEventListener('click', ({ target }) => {
   }
 });
 
-const declOfNum = (n, titles) => titles[n % 10 === 1 && n % 100 !== 11 ?
-  0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2];
+const addLeadingZero = num => (num < 10 ? `0${num}` : num);
 
-const timer = (deadline) => {
-  const unitDay = document.querySelector('.timer__unit_day');
-  const unitHour = document.querySelector('.timer__unit_hour');
-  const unitMin = document.querySelector('.timer__unit_min');
-  const descriptionDay = document.querySelector('.timer__unit-description_day');
-  const descriptionHour = document.querySelector('.timer__unit-description_hour');
-  const descriptionMin = document.querySelector('.timer__unit-description_min');
+const declOfNum = (n, titles) =>
+  titles[
+    n % 10 === 1 && n % 100 !== 11
+      ? 0
+      : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20)
+      ? 1
+      : 2
+  ];
+
+
+const timer = deadline => {
+  const unitDay = document.querySelector('.timer__unit_hour');
+  const unitHour = document.querySelector('.timer__unit_min');
+  const unitMin = document.querySelector('.timer__unit_sec');
+  const descriptionDay = document.querySelector('.timer__unit-description_hour');
+  const descriptionHour = document.querySelector(
+    '.timer__unit-description_min',
+  );
+  const descriptionMin = document.querySelector('.timer__unit-description_sec');
 
   const getTimeRemaining = () => {
     const dateStop = new Date(deadline).getTime();
     const dateNow = Date.now();
     const timeRemaining = dateStop - dateNow;
 
+    const seconds = Math.floor((timeRemaining / 1000) % 60);
     const minutes = Math.floor((timeRemaining / 1000 / 60) % 60);
     const hours = Math.floor((timeRemaining / 1000 / 60 / 60) % 24);
     const days = Math.floor(timeRemaining / 1000 / 60 / 60 / 24);
 
-    return { timeRemaining, minutes, hours, days };
+    return { timeRemaining, seconds, minutes, hours };
   };
 
   const start = () => {
     const timer = getTimeRemaining();
 
-    unitDay.textContent = timer.days;
-    unitHour.textContent = timer.hours;
-    unitMin.textContent = timer.minutes;
+    unitDay.textContent = addLeadingZero(timer.hours);
+    unitHour.textContent = addLeadingZero(timer.minutes);
+    unitMin.textContent = addLeadingZero(timer.seconds);
 
-    descriptionDay.textContent = declOfNum(timer.days, ['день', 'дня', 'дней']);
-    descriptionHour.textContent = declOfNum(timer.hours, ['час','часа','часов']);
-    descriptionMin.textContent = declOfNum(timer.minutes, ['минута', 'минуты', 'минут']);
+    descriptionDay.textContent = declOfNum(timer.hours, [
+      'час',
+      'часа',
+      'часов',
+    ]);
+    descriptionHour.textContent = declOfNum(timer.minutes, [
+      'минута',
+      'минуты',
+      'минут',
+    ]);
+    descriptionMin.textContent = declOfNum(timer.seconds, [
+      'секунда',
+      'секунды',
+      'секунд',
+    ]);
 
-    const intervalId = setTimeout(start, 60000);
+    const intervalId = setTimeout(start, 1000);
     if (timer.timeRemaining < 0) {
       clearTimeout(intervalId);
-      unitDay.textContent = '0';
-      unitHour.textContent = '0';
-      unitMin.textContent = '0';
+      unitDay.textContent = '00';
+      unitHour.textContent = '00';
+      unitMin.textContent = '00';
     }
   };
 
   start();
 };
 
-timer('2023/09/07 20:00');
+let now = new Date();
+let next_20;
+
+if (now.getHours() >= 20) {
+  next_20 = new Date(
+    now.getFullYear(),
+    now.getMonth(),
+    now.getDate() + 1,
+    20,
+    0,
+  );
+} else {
+  next_20 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 20, 0);
+}
+
+timer(next_20);
